@@ -1,0 +1,2313 @@
+/* ------------------------------------------------------STUDENT CONTAINER STYLE STARTS HERE------------------------------------------------------ */
+
+/*-------------------------------------------------------------
+----------------- Overall Styling starts here------------------
+---------------------------------------------------------------  */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+:root {
+    --blue: #4070f4;
+    --black: #000000;
+    --light-blue: #a6bcfa;
+    --dark-blue: #03262c;
+    --light-color: #555;
+    --box-shadow: .5rem .5rem 0 #d2dfff;
+    --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
+    --border: .2rem solid var(--blue);
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    max-zoom: 80%;
+}
+
+#sidebar::-webkit-scrollbar {
+    visibility: hidden;
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--blue);
+}
+
+::-webkit-scrollbar {
+    width: .4rem;
+}
+
+/* Overall styling ends here  */
+
+/*-------------------------------------------------------------
+----------------- navigation section starts here---------------
+---------------------------------------------------------------  */
+
+.navigation {
+    height: 100%;
+    width: 300px;
+    position: relative;
+}
+
+.navigation .menu-btn {
+    position: fixed;
+    left: 20px;
+    top: 10px;
+    background: var(--white);
+    color: var(--blue);
+    height: 45px;
+    width: 45px;
+    z-index: 10000;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#btn:checked~.menu-btn {
+    left: 247px;
+}
+
+.navigation .menu-btn i {
+    position: absolute;
+    font-size: 23px;
+    transition: all 0.3s ease;
+}
+
+.navigation .menu-btn i.fa-times {
+    opacity: 0;
+}
+
+#btn:checked~.menu-btn i.fa-times {
+    opacity: 1;
+    transform: rotate(-180deg);
+}
+
+#btn:checked~.menu-btn i.fa-bars {
+    opacity: 0;
+    transform: rotate(180deg);
+}
+
+#sidebar {
+    position: fixed;
+    border: .2rem solid var(--blue);
+    background: var(--light-blue);
+    height: 100%;
+    width: 270px;
+    overflow-y: scroll;
+    left: -270px;
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+#btn:checked~#sidebar {
+    left: 0;
+}
+
+#sidebar .title {
+    line-height: 65px;
+    text-align: center;
+    background: var(--blue);
+    font-size: 25px;
+    color: var(--white);
+    font-weight: 600;
+    border-bottom: 1px solid var(--dark-blue);
+    cursor: pointer;
+}
+
+#sidebar .title i {
+    color: var(--dark-blue);
+}
+
+#sidebar .list-items {
+    position: relative;
+    width: 100%;
+    height: 92%;
+    list-style: none;
+}
+
+#sidebar .list-items li {
+    padding-left: 40px;
+    line-height: 50px;
+    border-top: 1px solid var(--blue);
+    border-bottom: 1px solid var(--blue);
+    transition: all 0.3s ease;
+}
+
+#sidebar .list-items li:hover {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 0px 10px 3px var(--blue);
+}
+
+#sidebar .list-items li:first-child {
+    border-top: none;
+}
+
+#sidebar .list-items li a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+#sidebar .list-items li a i {
+    margin-right: 20px;
+    color: var(--dark-blue);
+}
+
+/* navigation section ends here  */
+
+/*-------------------------------------------------------------
+----------------- Overall common Section starts here-----------
+---------------------------------------------------------------  */
+
+header {
+    height: 75px;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #efefef;
+    border: 1px solid var(--blue);
+    box-shadow: .5rem .5rem 0 var(--light-blue);
+    padding: 1rem 8rem;
+    z-index: 5000;
+}
+
+.main-content {
+    padding: 0;
+    overflow: hidden;
+}
+
+.main-content header .menu-toggle h1 {
+    color: var(--blue);
+}
+
+.main-content header .icon span {
+    padding: 8px;
+    margin-right: 10px;
+    font-size: 1.6rem;
+    color: var(--blue);
+}
+
+.main {
+    padding: 1.5rem;
+    background: var(--light-blue);
+    min-height: calc(100vh-70px);
+    margin-top: 5rem;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-actions a {
+    outline: none;
+    text-decoration: none;
+    color: var(--white);
+    background: var(--blue);
+    border: none;
+    padding: 0.6rem 1rem;
+    margin-left: 1rem;
+    border-radius: 3px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-right: 0.6rem;
+}
+
+.header-actions a:hover {
+    background: var(--white);
+    color: var(--blue);
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+}
+
+.buttons {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.btn {
+    color: var(--white);
+    background: var(--blue);
+    box-shadow: var(--box-shadow);
+    font-size: 1.2rem;
+    padding: 0.2rem 1rem;
+    font-weight: 500;
+    margin: 2rem;
+    justify-content: space-between;
+    border: .2rem solid var(--black);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--white);
+    color: var(--blue);
+    border: var(--border);
+}
+
+@media (max-width : 800px) {
+
+    .main-content header .icon .dismiss {
+        visibility: hidden;
+        display: block;
+    }
+
+    .main-content header .icon span {
+        padding: 0;
+        margin-top: -30px;
+    }
+
+}
+
+@media (max-width : 680px) {
+
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .page-header .header-actions a {
+        padding: 0.6rem .8rem;
+        font-size: 1rem;
+    }
+
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem 0;
+    }
+
+    .main-content header .menu-toggle h1 {
+        margin-left: 6rem;
+    }
+
+}
+
+@media (max-width : 500px) {
+
+    .page-header .header-actions .emoji1 {
+        display: none;
+        visibility: hidden;
+    }
+
+    .page-header .header-actions .emoji2 {
+        display: block;
+        visibility: visible;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        width: calc(100%-50%);
+        align-items: center;
+    }
+
+    .btn {
+        width: 50%;
+        margin: 1rem;
+    }
+
+}
+
+@media (max-width :380px) {
+
+    .btn {
+        width: 100%;
+    }
+
+    .main-content header .menu-toggle h1 {
+        font-size: .8rem;
+    }
+
+}
+
+@media (max-width :450px) {
+
+    .main-content header .menu-toggle h1 {
+        font-size: 1.5rem;
+    }
+
+}
+
+/* Overall common Section ends here */
+
+/*-------------------------------------------------------------
+----------------- Student Dashboard Section starts here -------
+---------------------------------------------------------------  */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2.5rem;
+    margin-top: 2rem;
+    transform: translateX(3.5%);
+}
+
+.card-single {
+    background: var(--white);
+    padding: 1rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 2px;
+    width: 75%;
+}
+
+.card-flex {
+    display: grid;
+    grid-template-columns: 65% auto;
+    align-items: center;
+}
+
+.card-head span {
+    display: block;
+    text-transform: uppercase;
+    color: var(--black);
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.card-head small {
+    font-weight: 600;
+    color: var(--light-color);
+}
+
+.card-info h2 {
+    font-size: 2.2rem;
+    color: var(--dark-blue);
+}
+
+.card-chart span {
+    font-size: 5rem;
+    color: var(--blue);
+}
+
+.Dash-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    margin-top: 1rem;
+    transform: translateX(3.5%);
+}
+
+.datetime {
+    color: var(--blue);
+    background: var(--white);
+    font-family: "Segoe UI", sans-serif;
+    width: 430px;
+    padding: 25px 10px;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transform: translateX(55%);
+}
+
+.datetime:hover {
+    background: var(--blue);
+    color: var(--white);
+    box-shadow: 0 0 30px var(--blue);
+}
+
+.date {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.time {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time span:not(:last-child) {
+    position: relative;
+    margin: 0 6px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.time span:last-child {
+    background: var(--white);
+    font-size: 30px;
+    color: var(--blue);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+
+.todocontainer {
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px auto 0;
+    background-color: var(--white);
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+}
+
+.todocontainer .todo-field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+
+.todo-field textarea {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    padding: 10px 0px 0px 15px;
+    border: 1px solid var(--light-blue);
+    resize: none;
+}
+
+.todo-field textarea:focus {
+    border-color: var(--blue);
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.todo-field .note-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 24px;
+    color: var(--light-color);
+}
+
+.todo-field textarea:focus~.note-icon {
+    color: var(--blue);
+}
+
+.todocontainer .todoLists {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.todoLists .list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    background-color: var(--white);
+    padding: 15px 15px;
+    border-radius: 8px;
+    margin-top: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.todoLists .list input {
+    height: 16px;
+    min-width: 16px;
+    accent-color: var(--blue);
+    pointer-events: none;
+}
+
+.todoLists .list .task {
+    margin: 0 30px 0 15px;
+    word-break: break-all;
+}
+
+.list input:checked~.task {
+    text-decoration: line-through;
+}
+
+.todoLists .list i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--light-color);
+    padding: 5px;
+    opacity: 0.6;
+    display: none;
+}
+
+.todoLists .list:hover i {
+    display: inline-flex;
+}
+
+.todoLists .list i:hover {
+    opacity: 1;
+}
+
+.todocontainer .pending-tasks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.pending-tasks span {
+    color: var(--black);
+}
+
+.pending-tasks .clear-button {
+    padding: 6px 12px;
+    outline: none;
+    border: none;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.clear-button:hover {
+    background-color: var(--blue);
+}
+
+@media screen and (max-width: 350px) {
+    .todocontainer {
+        padding: 25px 10px;
+    }
+}
+
+.Seperate-bar {
+    overflow-y: hidden;
+    font-size: 1.4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    cursor: pointer;
+    height: 80%;
+    border: var(--border);
+}
+
+.division {
+    transform: translateY(-5%);
+}
+
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+}
+
+.icon-content {
+    transform: translateX(20%);
+}
+
+.icon-content .icos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.icon-content .one {
+    margin-bottom: 1rem;
+}
+
+.icon-content .icos a {
+    text-decoration: none;
+    background-color: var(--blue);
+    border: .2rem solid var(--light-color);
+    padding: 10px;
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    color: var(--white);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.icon-content .icos a:hover {
+    background-color: var(--white);
+    color: var(--blue);
+    border: var(--border);
+}
+
+.Dash-container .division h1,
+.Dash-container .lists h1 {
+    color: var(--dark-blue);
+}
+
+.Dash-container .lists h1 {
+    transform: translateX(-15%);
+}
+
+/* Student Dashboard Responsive starts here */
+
+@media (max-width : 1410px) {
+
+    .Dash-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+        transform: translateX(-5%);
+        transition: 0.5s ease-in-out;
+    }
+
+    .todocontainer {
+        transform: translateX(25%);
+    }
+
+    .card-single {
+        width: 88%;
+    }
+
+    .Dash-container .division h1,
+    .Dash-container .lists h1 {
+        margin: 18px;
+    }
+
+}
+
+@media (max-width : 1115px) {
+
+    .card-chart span {
+        font-size: 3rem;
+    }
+
+    .card-head span {
+        font-size: .9rem;
+    }
+
+    .card-head small {
+        font-size: .8rem;
+    }
+
+}
+
+@media (max-width : 960px) {
+
+    .Dash-container {
+        transform: translateX(-8%);
+    }
+
+}
+
+@media (max-width : 865px) {
+
+    .Dash-container .division h1,
+    .Dash-container .lists h1 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .datetime {
+        width: 380px;
+        padding: 15px 4px;
+    }
+
+    .time {
+        font-size: 40px;
+    }
+
+    .time span:last-child {
+        font-size: 25px;
+    }
+
+    .date {
+        font-size: 17px;
+    }
+
+    .icon-content .icos a {
+        font-size: 1.3rem;
+    }
+
+    .icon-content {
+        transform: translateX(8%);
+    }
+
+    .todocontainer {
+        transform: translateX(15%);
+    }
+
+    .card-chart span {
+        font-size: 2.5rem;
+    }
+
+    .card-head span {
+        font-size: .7rem;
+    }
+
+    .card-head small {
+        font-size: .6rem;
+    }
+
+}
+
+@media (max-width : 800px) {
+
+    .Dash-container .division h1 {
+        text-align: center;
+        margin-left: 10rem;
+        margin-bottom: 0.8rem;
+
+    }
+
+    .Dash-container .lists h1 {
+        text-align: center;
+        width: 100%;
+        transform: translate(0%);
+        margin-bottom: 0.8rem;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        transform: translateX(20%);
+    }
+
+    .card-single {
+        width: 60%;
+    }
+
+    .main-content header .icon .fa-search {
+        visibility: hidden;
+        display: block;
+    }
+
+    .main-content header .icon span {
+        padding: 0;
+        margin-top: -30px;
+    }
+
+}
+
+@media (max-width : 680px) {
+
+    .Dash-container .lists h1,
+    .Dash-container .division h1,
+    .Dash-container,
+    .icon-content,
+    .todocontainer,
+    .datetime {
+        margin: 0 auto;
+        transform: translateX(0%);
+    }
+
+    .Dash-container {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .page-header .header-actions a {
+        padding: 0.6rem .8rem;
+        font-size: 1rem;
+    }
+
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem 0;
+    }
+
+    .main-content header .menu-toggle h1 {
+        margin-left: 6rem;
+    }
+
+    .Dash-container .division h1,
+    .Dash-container .lists h1 {
+        margin: 18px;
+    }
+
+}
+
+@media (max-width : 500px) {
+
+    .page-header .header-actions .emoji1 {
+        display: none;
+        visibility: hidden;
+    }
+
+    .page-header .header-actions .emoji2 {
+        display: block;
+        visibility: visible;
+    }
+
+}
+
+@media (max-width : 530px) {
+
+    .datetime {
+        width: 340px;
+    }
+
+    .Seperate-bar {
+        height: 82%;
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0rem 0.5rem;
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width : 381px) {
+
+    .card-info small {
+        font-size: .6rem;
+    }
+
+    .card-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-single {
+        width: 100%;
+    }
+
+    .cards {
+        transform: translate(0%);
+    }
+
+}
+
+/* Student Dashboard Responsive ends here */
+
+/* Student Dashboard Section ends here */
+
+/*-------------------------------------------------------------
+----------------- Student details Section starts here ---------
+---------------------------------------------------------------  */
+
+.Student-container {
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 2rem auto;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-top: 8px solid var(--blue);
+    border-left: .2rem solid var(--blue);
+    border-right: .2rem solid var(--blue);
+    border-bottom: .2rem solid var(--blue);
+}
+
+.Student-container h1 {
+    position: relative;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.Student-container h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 3px;
+    width: 140px;
+    border-radius: 8px;
+    background-color: var(--blue);
+}
+
+.Student-container form {
+    position: relative;
+    margin-top: 16px;
+    min-height: 990px;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.Student-container form .title {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 3px 0;
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+.Student-container form .fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.Student-container form .fields .input-field {
+    display: flex;
+    width: calc(100% / 3 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.Student-container .input-field label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--light-color);
+}
+
+.Student-container .input-field input,
+.Student-container select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: .1rem solid var(--light-color);
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+
+.Student-container .input-field select,
+.Student-container .input-field input {
+    color: var(--light-color);
+}
+
+/* Student details Responsive starts here */
+
+@media (max-width: 750px) {
+
+    .Student-container form .fields .input-field {
+        width: calc(100% / 2 - 15px);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .Student-container form .fields .input-field {
+        width: 100%;
+    }
+
+}
+
+/* Student details Responsive ends here */
+
+/* Student Details Section ends here  */
+
+/*-------------------------------------------------------------
+----------- Student Attendance Section starts here ------------
+---------------------------------------------------------------  */
+
+.Att-container {
+    max-width: 700px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 25px;
+    margin: 1rem auto;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-top: 8px solid var(--blue);
+    border-left: .2rem solid var(--blue);
+    border-right: .2rem solid var(--blue);
+    border-bottom: .2rem solid var(--blue);
+}
+
+.Att-container h1 {
+    position: relative;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.Att-container h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 3px;
+    width: 140px;
+    border-radius: 8px;
+    background-color: var(--blue);
+}
+
+.Att-container form {
+    margin-top: 16px;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.Att-container form .fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.Att-container form .fields .input-field {
+    display: flex;
+    width: calc(100% - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.Att-container .input-field label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+.Att-container .input-field input,
+.Att-container select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: .1rem solid var(--light-color);
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+    width: calc(100%-10%);
+}
+
+.Att-container .input-field select:focus,
+.Att-container .input-field input:focus {
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    color: var(--black);
+}
+
+.Att-container .input-field select,
+.Att-container .input-field input {
+    color: var(--light-color);
+}
+
+/* Attendance success popup starts here */
+
+.Att-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 350px;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    border-top: 8px solid #159538;
+    border-left: .2rem solid #159538;
+    border-right: .2rem solid #159538;
+    border-bottom: .2rem solid #159538;
+    background-color: var(--white);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#AttPopup.active {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.Att-popup img {
+    height: 5rem;
+    width: 5rem;
+}
+
+.Att-popup h1 {
+    font-size: 2rem;
+}
+
+.Att-popup p {
+    font-size: 1.3rem;
+}
+
+.Att-popup a {
+    font-size: 2rem;
+    padding: 7px;
+    text-decoration: none;
+    color: white;
+    background-color: #159538;
+}
+
+.main-content#AttHide.active {
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Attendance success popup ends here  */
+
+/* Student attendance Responsive starts here */
+
+@media (max-width: 550px) {
+
+    .Att-container form .fields .input-field {
+        width: 100%;
+    }
+
+}
+
+/* Student attendance Responsive ends here */
+
+/* Student attendance Section ends here  */
+
+/*-------------------------------------------------------------
+----------- Student timetable Section starts here -------------
+---------------------------------------------------------------  */
+
+.table-container {
+    transform: translateX(10%);
+    margin: 2rem;
+}
+
+table,
+tr,
+th,
+td {
+    border-collapse: collapse;
+    border: 2px solid var(--dark-blue);
+    text-align: center;
+    padding: 5px;
+}
+
+table {
+    width: 80%;
+}
+
+.clr1 {
+    background-color: var(--white);
+    color: var(--black);
+    font-weight: 600;
+}
+
+.size {
+    font-size: 1.1rem;
+    font-weight: 800;
+    background-color: #488ef8;
+}
+
+.main-content .tab-title {
+    margin: 1rem;
+}
+
+/* Student timetable Responsive starts here */
+
+@media (max-width :915px) {
+
+    .table-container {
+        transform: translateX(0%);
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .main-content .tab-title {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (max-width :550px) {
+
+    .main-content .tab-title {
+        font-size: 1.1rem;
+    }
+
+}
+
+@media (max-width :745px) {
+
+    th,
+    td,
+    tr {
+        display: block;
+
+    }
+
+    #hide {
+        display: none;
+    }
+
+    .table-container {
+        width: 70%;
+        margin: 1rem auto;
+    }
+
+    .size {
+        background-color: lightseagreen;
+    }
+
+    .clr1,
+    .clr3 {
+        background-color: whitesmoke;
+    }
+
+}
+
+@media (max-width :400px) {
+
+    .table-container {
+        width: 90%;
+        margin: 1rem;
+    }
+
+}
+
+/* Student TimeTable Responsive ends here */
+
+/* Student Timetable Section ends here  */
+
+/*-------------------------------------------------------------
+----------- Student fees Section starts here ------------------
+---------------------------------------------------------------  */
+
+.Fees-container {
+    max-width: 700px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 25px;
+    margin: 1rem auto;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-top: 8px solid var(--blue);
+    border-left: .2rem solid var(--blue);
+    border-right: .2rem solid var(--blue);
+    border-bottom: .2rem solid var(--blue);
+}
+
+.Fees-container h1 {
+    position: relative;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.Fees-container h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 3px;
+    width: 140px;
+    border-radius: 8px;
+    background-color: var(--blue);
+}
+
+.Fees-container form {
+    margin-top: 16px;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.Fees-container form .fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.Fees-container form .fields .input-field {
+    display: flex;
+    width: calc(100% - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.Fees-container .input-field label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+.Fees-container .input-field input {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: .1rem solid var(--light-color);
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+    width: calc(100%-10%);
+}
+
+.Fees-container .input-field input:focus {
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    color: var(--black);
+}
+
+.Fees-container .input-field input {
+    color: var(--light-color);
+}
+
+/* Student fees Responsive starts here */
+
+@media (max-width: 550px) {
+
+    .Fees-container form .fields .input-field {
+        width: 100%;
+    }
+
+}
+
+/* Student fees Responsive ends here */
+
+/*~~~~ Student fees Details starts here ~~~~~ */
+
+.price {
+    width: 1300px;
+    margin: 35px;
+    transform: translateX(10%);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(22rem, 1fr));
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.single-amount {
+    text-align: center;
+    width: 100%;
+    border: var(--border);
+    border-radius: 3px;
+    transition: .3s;
+    background-color: var(--white);
+}
+
+.price-header {
+    position: relative;
+    padding: 25px 0px 50px;
+    color: var(--dark-blue);
+    background-image: linear-gradient(180deg, #5984fa, #809ef0, #4274fd);
+}
+
+.price-header span {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 25px;
+    color: var(--black);
+}
+
+.price-header h4 {
+    font-size: 50px;
+    margin-top: 15px;
+}
+
+.price-header h4 span {
+    text-transform: lowercase;
+}
+
+.price-feature {
+    margin: 30px 50px 30px;
+    text-align: left;
+}
+
+.price-feature ul {
+    list-style: none;
+}
+
+.price-feature ul li {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed var(--blue);
+}
+
+.price-feature ul li.price-icon-check i {
+    color: teal;
+}
+
+.price-feature ul li.price-icon-close i {
+    color: red;
+}
+
+.price-feature ul li i {
+    width: 20px;
+}
+
+.price-feature ul li:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.price-footer {
+    position: relative;
+    padding: 30px 0;
+    background-image: linear-gradient(180deg, #2861ff, #658cf7, #1d3985);
+}
+
+.price-footer a {
+    color: var(--blue);
+    border: var(--border);
+    text-decoration: none;
+    background-color: #fff;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 7px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.price-footer a:hover {
+    background-color: var(--blue);
+    border: .2rem solid var(--dark-blue);
+    color: var(--white);
+}
+
+.single-amount:hover {
+    border: .2rem solid var(--dark-blue);
+    transform: scale(0.9);
+}
+
+/*  Student fees Details Responsive starts here */
+
+@media (max-width:1500px) {
+
+    .price {
+        width: 1000px;
+        grid-template-columns: repeat(2, minmax(10rem, 1fr));
+        transform: translateX(15%);
+    }
+
+}
+
+@media (max-width:1340px) {
+
+    .price {
+        width: 800px;
+        transform: translateX(25%);
+    }
+
+}
+
+@media (max-width:1260px) {
+
+    .price {
+        transform: translateX(15%);
+    }
+
+}
+
+@media (max-width:1135px) {
+
+    .price {
+        transform: translateX(5%);
+    }
+
+}
+
+@media (max-width:1000px) {
+
+    .price {
+        width: 700px;
+    }
+
+}
+
+@media (max-width:860px) {
+
+    .price {
+        width: 400px;
+        grid-template-columns: repeat(1, minmax(1rem, 1fr));
+        transform: translateX(0%);
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width:500px) {
+
+    .price {
+        width: 350px;
+        grid-template-columns: repeat(1, minmax(1rem, 1fr));
+        transform: translateX(0%);
+        margin: 10px auto;
+    }
+
+    .price-header {
+        padding: 10px 0px 20px;
+    }
+
+    .price-header span {
+        font-size: 20px;
+    }
+
+    .price-header h4 {
+        font-size: 25px;
+        margin-top: 10px;
+    }
+
+    .price-footer {
+        padding: 15px 0;
+    }
+
+    .price-footer a {
+        margin-top: 0px;
+    }
+
+}
+
+/*  Student fees Details Responsive ends here */
+
+/* ~~~~ Student fees Details ends here ~~~~ */
+
+/* ~~~~ Student fees Payments starts here ~~~~ */
+
+.payment-container {
+    max-width: 700px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 25px;
+    margin: 1rem auto;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-top: 8px solid var(--blue);
+    border-left: .2rem solid var(--blue);
+    border-right: .2rem solid var(--blue);
+    border-bottom: .2rem solid var(--blue);
+}
+
+.payment-container h1 {
+    position: relative;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.payment-container h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 3px;
+    width: 140px;
+    border-radius: 8px;
+    background-color: var(--blue);
+}
+
+.payment-container form {
+    margin-top: 16px;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.payment-container form .fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.payment-container form .fields .input-field {
+    display: flex;
+    width: calc(100% - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.payment-container .input-field label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+.payment-container .input-field input,
+.payment-container select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: .1rem solid var(--light-color);
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+    width: calc(100%-10%);
+}
+
+.payment-container .input-field select:focus,
+.payment-container .input-field input:focus {
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    color: var(--black);
+}
+
+.payment-container .input-field select,
+.payment-container .input-field input {
+    color: var(--light-color);
+}
+
+.payment-container form .fields .input-field img {
+    height: 40px;
+    width: 60%;
+    margin-top: 10px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+.payment-container form .Goback {
+    font-size: 1.2rem;
+}
+
+.payment-container form .Goback a {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.payment-container form .Goback a:hover {
+    color: var(--dark-blue);
+}
+
+/* Student fees payment Responsive starts here */
+
+@media (max-width: 550px) {
+
+    .payment-container form .fields .input-field {
+        width: 100%;
+    }
+
+}
+
+/* Student fees payment Responsive ends here */
+
+/* ~~~~~ Student fees Payments ends here ~~~~~ */
+
+/* payment success popup starts here */
+
+.Pay-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 350px;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    border-top: 8px solid #159538;
+    border-left: .2rem solid #159538;
+    border-right: .2rem solid #159538;
+    border-bottom: .2rem solid #159538;
+    background-color: var(--white);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#payPopup.active {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.Pay-popup img {
+    height: 5rem;
+    width: 5rem;
+}
+
+.Pay-popup h1 {
+    font-size: 2rem;
+}
+
+.Pay-popup p {
+    font-size: 1.3rem;
+}
+
+.Pay-popup a {
+    font-size: 2rem;
+    padding: 7px;
+    text-decoration: none;
+    color: white;
+    background-color: #159538;
+}
+
+.main-content#PayHide.active {
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* payment success popup ends here  */
+
+/*  Student fees section ends here */
+
+/*-------------------------------------------------------------
+--------------- Student Exam Section starts here --------------
+---------------------------------------------------------------  */
+
+.seperate-exam {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.StudentExam-container {
+    max-width: 600px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 25px;
+    margin: 1rem auto;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-top: 8px solid var(--blue);
+    border-left: .2rem solid var(--blue);
+    border-right: .2rem solid var(--blue);
+    border-bottom: .2rem solid var(--blue);
+}
+
+.StudentExam-container h1 {
+    position: relative;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.StudentExam-container h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 3px;
+    width: 140px;
+    border-radius: 8px;
+    background-color: var(--blue);
+}
+
+.StudentExam-container form {
+    position: relative;
+    margin-top: 16px;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.StudentExam-container form .title {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 3px 0;
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+.StudentExam-container form .fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.StudentExam-container form .fields .input-field {
+    display: flex;
+    width: calc(100% / 2 - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.StudentExam-container form .Different-addtt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.StudentExam-container form .Different-addtt .input-field {
+    display: flex;
+    width: calc(100% - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.StudentExam-container .input-field label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+.StudentExam-container .input-field input,
+.StudentExam-container .input-field select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: .1rem solid var(--light-color);
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+    width: calc(100%-10%);
+}
+
+.StudentExam-container .input-field input:focus,
+.StudentExam-container .input-field select:focus {
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    color: var(--black);
+}
+
+.StudentExam-container .input-field input,
+.StudentExam-container .input-field select {
+    color: var(--light-color);
+}
+
+.StudExamDetails {
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+
+.StudExamDetails-list {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.StudExamDetails-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 15px;
+    min-width: 100%;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+
+table thead tr {
+    color: #fff;
+    background: var(--blue);
+    text-align: left;
+    font-weight: bold;
+}
+
+.StudExamDetails-table th,
+.StudExamDetails-table td {
+    padding: 12px 15px;
+}
+
+.StudExamDetails-table tbody tr {
+    border-bottom: 1px solid var(--white);
+}
+
+.StudExamDetails-table tbody tr:nth-of-type(odd) {
+    background: var(--white);
+}
+
+.StudExamDetails-table tbody tr.active {
+    font-weight: bold;
+    color: var(--blue);
+}
+
+.StudExamDetails-table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--blue);
+}
+
+.StudExamDetails-table button {
+    padding: 6px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--blue);
+}
+
+.StudExamDetails-table button:hover {
+    background: var(--blue);
+    color: var(--white);
+    transition: 0.5rem;
+}
+
+/* Student Exam Responsive starts here */
+
+@media (max-width: 550px) {
+
+    .StudentExam-container form .fields .input-field {
+        width: 100%;
+    }
+
+    .StudentExam-container form .Different-addtt .input-field {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .StudentExam-container form .fields {
+        flex-wrap: wrap;
+        gap: 0px;
+    }
+
+    .StudentExam-container form .Different-addtt {
+        flex-wrap: wrap;
+        gap: 0px;
+    }
+
+}
+
+/* Student Exam Responsive ends here */
+
+/*  Student Exam section ends here */
+
+/*-------------------------------------------------------------
+------------- Student Result Section starts here --------------
+---------------------------------------------------------------  */
+
+.Result-container {
+    max-width: 700px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 25px;
+    margin: 1rem auto;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-top: 8px solid var(--blue);
+    border-left: .2rem solid var(--blue);
+    border-right: .2rem solid var(--blue);
+    border-bottom: .2rem solid var(--blue);
+}
+
+.Result-container h1 {
+    position: relative;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.Result-container h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 3px;
+    width: 140px;
+    border-radius: 8px;
+    background-color: var(--blue);
+}
+
+.Result-container form {
+    margin-top: 16px;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.Result-container form .fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.Result-container form .fields .input-field {
+    display: flex;
+    width: calc(100% - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.Result-container .input-field label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+.Result-container .input-field input,
+.Result-container .input-field select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: .1rem solid var(--light-color);
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+    width: calc(100%-10%);
+}
+
+.Result-container .input-field input:focus,
+.Result-container .input-field select:focus {
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    color: var(--black);
+}
+
+.Result-container .input-field input,
+.Result-container .input-field select {
+    color: var(--light-color);
+}
+
+.Res {
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+
+.Result-list {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.Result-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 15px;
+    min-width: 100%;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+
+table thead tr {
+    color: #fff;
+    background: var(--blue);
+    text-align: left;
+    font-weight: bold;
+}
+
+.Result-table th,
+.Result-table td {
+    padding: 12px 15px;
+}
+
+.Result-table tbody tr {
+    border-bottom: 1px solid var(--white);
+}
+
+.Result-table tbody tr:nth-of-type(odd) {
+    background: var(--white);
+}
+
+.Result-table tbody tr.active {
+    font-weight: bold;
+    color: var(--blue);
+}
+
+.Result-table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--blue);
+}
+
+.Result-table button {
+    padding: 6px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--blue);
+}
+
+.Result-table button:hover {
+    background: var(--blue);
+    color: var(--white);
+    transition: 0.5rem;
+}
+
+/* Student Result Responsive starts here */
+
+@media (max-width: 550px) {
+
+    .Result-container form .fields .input-field {
+        width: 100%;
+    }
+
+}
+
+/* Student Result Responsive ends here */
+
+/*  Student Result section ends here */
+
+/*-------------------------------------------------------------
+----------- Student Materials Section starts here -------------
+---------------------------------------------------------------  */
+
+.Differ-text {
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: underline;
+    color: var(--dark-blue);
+    text-align: center;
+}
+
+.StudentMaterial-container {
+    margin: 1rem 5rem 1rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 2rem;
+}
+
+.StudentMaterial-container .icons {
+    text-align: center;
+    text-decoration: none;
+    box-shadow: var(--box-shadow);
+    border: 0.1rem solid var(--blue);
+    background: var(--light-light-blue);
+    cursor: pointer;
+    padding: 2rem 1rem;
+}
+
+.StudentMaterial-container .icons i {
+    height: 5rem;
+    color: var(--blue);
+    margin-bottom: .5rem;
+    font-size: 4rem;
+}
+
+.StudentMaterial-container .icons h3 {
+    padding: .5rem 0;
+    font-size: 1rem;
+    text-transform: capitalize;
+    color: var(--black);
+    text-shadow: none;
+}
+
+.StudentMaterial-container .icons:hover {
+    background-color: var(--blue);
+    transition: 0.3s ease;
+    border: 0.1rem solid var(--dark-blue);
+}
+
+.StudentMaterial-container .icons:hover i {
+    color: var(--dark-blue);
+}
+
+.StudentMaterial-container .icons:hover h3 {
+    color: var(--white);
+}
+
+/*  Student Materials section ends here */
+
+/*-------------------------------------------------------------
+----------- Student report Section starts here ----------------
+---------------------------------------------------------------  */
+
+.report-container {
+    max-width: 700px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 25px;
+    margin: 1rem auto;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-top: 8px solid var(--blue);
+    border-left: .2rem solid var(--blue);
+    border-right: .2rem solid var(--blue);
+    border-bottom: .2rem solid var(--blue);
+}
+
+.report-container h1 {
+    position: relative;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.report-container h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 3px;
+    width: 140px;
+    border-radius: 8px;
+    background-color: var(--blue);
+}
+
+.report-container form {
+    margin-top: 16px;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.report-container form .fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.report-container form .fields .input-field {
+    display: flex;
+    width: calc(100% - 15px);
+    flex-direction: column;
+    margin: 4px 0;
+}
+
+.report-container .input-field label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+.report-container .input-field input,
+.report-container select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: .1rem solid var(--light-color);
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+    width: calc(100%-10%);
+}
+
+.report-container .input-field textarea {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: .1rem solid var(--light-color);
+    padding: 0 15px;
+    margin: 8px 0;
+    width: calc(100%-10%);
+}
+
+.report-container .input-field select:focus,
+.report-container .input-field input:focus,
+.report-container .input-field textarea:focus {
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    color: var(--black);
+}
+
+.report-container .input-field select,
+.report-container .input-field input,
+.report-container .input-field textarea {
+    color: var(--light-color);
+}
+
+/* Student report Responsive starts here */
+
+@media (max-width: 550px) {
+
+    .report-container form .fields .input-field {
+        width: 100%;
+    }
+
+}
+
+/* Student report Responsive ends here */
+
+/* Student report Section ends here  */
+
+/* ------------------------------------------------------STUDENT CONTAINER STYLE ENDS HERE------------------------------------------------------ */

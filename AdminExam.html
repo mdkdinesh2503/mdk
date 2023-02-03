@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title name -->
+    <title>C l o u d - E x a m (A)</title>
+
+    <!-- Title logo link  -->
+    <link rel="shortcut icon" sizes="32x32" href="./images/title-img.png" type="image/x-icon" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- css connection  -->
+    <link rel="stylesheet" href="styleadmin.css">
+
+</head>
+
+<body>
+
+    <!-- navigation section starts here  -->
+
+    <div class="navigation">
+
+        <input type="checkbox" id="btn" hidden>
+
+        <label id="menu-btn" for="btn" class="menu-btn">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </label>
+
+        <nav id="sidebar">
+
+            <div class="title" onclick="OpenPage()"> <i class="fas fa-cloud-moon"></i> Cloud..</div>
+
+            <ul class="list-items">
+                <li><a href="AdminDashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
+                <li><a href="AdminDetails.html"><i class="fas fa-users"></i>Student Details</a></li>
+                <li><a href="AdminAttendance.html"><i class="fas fa-address-book"></i>Attendance</a></li>
+                <li><a href="AdminTimetable.html"><i class="fas fa-calendar"></i>Time Table</a></li>
+                <li><a href="AdminFees.html"><i class="fas fa-rupee-sign"></i>Fees Details</a></li>
+                <li><a href="AdminExam.html"><i class="fas fa-file-alt"></i>Exam Details</a></li>
+                <li><a href="AdminResults.html"><i class="fas fa-file-export"></i>Result Details</a></li>
+                <li><a href="AdminMaterials.html"><i class="fas fa-file-pdf"></i>Materials</a></li>
+                <li><a href="AdminReport.html"><i class="fas fa-edit"></i>Reports</a></li>
+            </ul>
+
+        </nav>
+
+    </div>
+
+    <!-- navigation section ends here  -->
+
+    <!-- Admin Exam section starts here  -->
+
+    <div class="main-content">
+
+        <header id="header-part">
+
+            <div class="menu-toggle">
+                <h1>Exam Details</h1>
+            </div>
+
+            <div class="icon">
+                <span class="dismiss">Logout</span>
+                <a title="logout" href="./loginpage.html"><span class="fas fa-file-export"></span></a>
+            </div>
+
+        </header>
+
+        <div class="main">
+
+            <div class="page-header">
+
+                <div>
+                    <h1>Find Details...</h1>
+                </div>
+
+                <div class="header-actions">
+
+                    <a class="emoji1" href="./AdminReport.html">
+                        <span class="fas fa-edit"></span>
+                        Enquiry
+                    </a>
+
+                    <a onclick="history.back()" class="emoji2">
+                        <span class="fas fa-arrow-left"></span>
+                        Go Back
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="seperate-exam">
+
+                <div class="AdminExam-container">
+
+                    <h1>ExamFees view</h1>
+
+                    <form>
+
+                        <div class="Different-addtt">
+
+                            <div class="input-field">
+                                <label>Register number</label>
+                                <input id="Adminexamregno" autocomplete="off" type="tel" maxlength="7"
+                                    placeholder="Enter Register number">
+                            </div>
+
+                        </div>
+
+                        <div class="buttons">
+
+                            <button id="smtbtn" class="btn">
+                                <i class="fas fa-share"></i>
+                                view
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="AdminExam-container">
+
+                    <h1>Allocate Hallticket</h1>
+
+                    <form>
+
+                        <div class="fields">
+
+                            <div class="input-field">
+                                <label>Register number</label>
+                                <input id="Adminexamregno" autocomplete="off" type="tel" maxlength="7"
+                                    placeholder="Enter Register number">
+                            </div>
+
+                            <div class="input-field">
+                                <label>Upload</label>
+                                <input id="AdminexamhallTicket" type="file">
+                            </div>
+
+                        </div>
+
+                        <div class="buttons">
+
+                            <button id="smtbtn" class="btn">
+                                <i class="fas fa-share"></i>
+                                view
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="AdminExam-container">
+
+                <h1>ExamTimetable</h1>
+
+                <form>
+
+                    <div class="fields">
+
+                        <div class="input-field">
+                            <label>Degree</label>
+                            <input id="degr" type="text" placeholder="Enter your degree">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Department</label>
+                            <input id="deprt" type="text" placeholder="Enter your department">
+                        </div>
+
+                    </div>
+
+                    <div class="buttons">
+
+                        <button id="smtbtn" class="btn">
+                            <i class="fas fa-share"></i>
+                            ADD
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <section class="StudExamDetails">
+
+                <div class="StudExamDetails-list">
+
+                    <h1>Exam Fees List</h1>
+
+                    <table class="StudExamDetails-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>ID</th>
+                                <th>Register Number</th>
+                                <th>Name</th>
+                                <th>Degree</th>
+                                <th>Department</th>
+                                <th>Feilds</th>
+                                <th>Receipt</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr class="active">
+                                <td>01</td>
+                                <td>1913022</td>
+                                <td>Dinesh kumar</td>
+                                <td>BE</td>
+                                <td>CSE</td>
+                                <td>Pending</td>
+                                <td><button disabled>View</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>02</td>
+                                <td>1913002</td>
+                                <td>Kiran</td>
+                                <td>BE</td>
+                                <td>CSE</td>
+                                <td>Paided</td>
+                                <td><button>View</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>03</td>
+                                <td>1913003</td>
+                                <td>Ganesh</td>
+                                <td>BE</td>
+                                <td>IT</td>
+                                <td>Paided</td>
+                                <td><button>View</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>04</td>
+                                <td>1913054</td>
+                                <td>Hari</td>
+                                <td>BE</td>
+                                <td>EEE</td>
+                                <td>Paided</td>
+                                <td><button>View</button></td>
+                            </tr>
+
+                            <tr class="active">
+                                <td>05</td>
+                                <td>1913051</td>
+                                <td>Subramani</td>
+                                <td>BE</td>
+                                <td>CSE</td>
+                                <td>Pending</td>
+                                <td><button disabled>View</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>06</td>
+                                <td>1913011</td>
+                                <td>Shree</td>
+                                <td>BE</td>
+                                <td>ECE</td>
+                                <td>Paided</td>
+                                <td><button>View</button></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <div class="table-container">
+
+                <table>
+
+                    <th colspan="8" style="font-size: 1.7rem; padding: 8px;background-color: #1abae2;">EXAM TIMETABLE
+                    </th>
+
+                    <tr class="size" id="hide">
+                        <th>DATE / TIME</th>
+                        <th>09.00 A.M. To 09.50 A.M.</th>
+                        <th>09.50 A.M. To 10.40 A.M.</th>
+                        <th>10.55 A.M. To 11.40 P.M.</th>
+                        <th>11.40 A.M. To 12.30 P.M.</th>
+                        <th>01.30 P.M. To 02.20 P.M.</th>
+                        <th>02.20 P.M. To 03.10 P.M.</th>
+                        <th>03.10 P.M. To 04.00 P.M.</th>
+                    </tr>
+
+                    <tr class="clr1">
+                        <th class="size">MON</th>
+                        <td>CT/HSN/BI</td>
+                        <td>GM</td>
+                        <td>BD&CC</td>
+                        <td>PE</td>
+                        <td>BD&CC</td>
+                        <td>SSD/LIB</td>
+                        <td>GM</td>
+                    </tr>
+
+                    <tr class="clr3">
+                        <th class="size">TUE</th>
+                        <td>CT/C&NS</td>
+                        <td>PE</td>
+                        <td>HSN/BI</td>
+                        <td>BD&CC</td>
+                        <td>HSN/BI</td>
+                        <td colspan="2">BD&CSS/GM LAB</td>
+                    </tr>
+
+                    <tr class="clr1">
+                        <th class="size">WED</th>
+                        <td>CT/GM</td>
+                        <td>HSN/BI</td>
+                        <td>C&NS/HH</td>
+                        <td>BD&CC</td>
+                        <td>GM</td>
+                        <td>PE</td>
+                        <td>C&NS</td>
+                    </tr>
+
+                    <tr class="clr3">
+                        <th class="size">THU</th>
+                        <td>CT/PE</td>
+                        <td>HSN/BI</td>
+                        <td colspan="2">BD&CC/GM LAB</td>
+                        <td colspan="3">PRIEE</td>
+                    </tr>
+
+                    <tr class="clr1">
+                        <th class="size">FRI</th>
+                        <td>CT/BD&CC</td>
+                        <td>GM</td>
+                        <td colspan="2">PRIEE</td>
+                        <td>C&NS</td>
+                        <td>PE</td>
+                        <td>C&NS</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Admin Exam section ends here  -->
+
+</body>
+
+<!-- Javascript connection link  -->
+<script src="./scriptadmin.js"></script>
+
+</html>

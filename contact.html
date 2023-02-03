@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title name -->
+    <title>C l o u d - C o n t a c t</title>
+
+    <!-- Title logo link  -->
+    <link rel="shortcut icon" sizes="32x32" href="./images/title-img.png" type="image/x-icon" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Css connection link  -->
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <!-- Header section starts  -->
+
+    <header>
+
+        <a href="#" class="logo"> <i class="fas fa-cloud-moon"></i> <span>C</span> loud... </a>
+
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+            <a href="about.html">about</a>
+            <a href="courses.html">courses</a>
+            <a href="blogs.html">blogs</a>
+            <a href="services.html">services</a>
+            <a href="contact.html" class="Highlight">Contact</a>
+            <a href="loginpage.html">Login</a>
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+
+    <!-- Header section ends  -->
+
+    <!-- Main Heading starts -->
+
+    <div class="heading-bg">
+        <section class="heading-link">
+            <h3>contact us</h3>
+            <p> <a href="./home.html">home</a> / contact </p>
+        </section>
+    </div>
+
+    <!-- Main Heading ends -->
+
+    <!-- contact section starts  -->
+
+    <section class="contact">
+
+        <h1 class="heading"> get in touch </h1>
+
+        <div class="icons-container">
+            <a onclick="popuptime()">
+                <div class="icons">
+                    <i class="fas fa-clock"></i>
+                    <h3>opening hours :</h3>
+                    <p>09:00am to 04:00pm</p>
+                </div>
+            </a>
+
+            <a href="tel:9787943467">
+            <div class="icons">
+                <i class="fas fa-phone"></i>
+                <h3>phone :</h3>
+                <p>+91-97879-43467</p>
+            </div>
+            </a>
+
+            <a href="mailto:cecsdineshkumarm23@gmail.com">
+                <div class="icons">
+                    <i class="fas fa-envelope"></i>
+                    <h3> email : </h3>
+                    <p>cecsdineshkumarm23@gmail.com</p>
+                </div>
+            </a>
+
+            <a onclick="popuplocation()">
+                <div class="icons">
+                    <i class="fas fa-map"></i>
+                    <h3>address :</h3>
+                    <p>Namakkal, india - 637001</p>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="./images/contact-img.png" alt="">
+            </div>
+
+            <form action="https://formspree.io/f/mdojdykz" method="post">
+                <h3>send us a message</h3>
+                <input type="text" name="UserName :" placeholder="name" class="box">
+                <input type="email" name="Email :" placeholder="email" class="box">
+                <input type="tel" name="Phone Number :" maxlength="10" placeholder="phone" class="box">
+                <textarea name="Messgae Box :" class="box" placeholder="message" id="" cols="30" rows="10"></textarea>
+                <input type="submit" value="send message" class="btn">
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- contact section ends -->
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3> <i class="fas fa-cloud-moon"></i> Cloud... </h3>
+                <p>Education is the most powerful weapon which you can use to change the world...</p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="home.html" class="link sec"> <i class="fas fa-chevron-right"></i>&numsp; home </a>
+                <a href="about.html" class="link sec"> <i class="fas fa-chevron-right"></i>&numsp; about </a>
+                <a href="courses.html" class="link sec"> <i class="fas fa-chevron-right"></i>&numsp; courses </a>
+                <a href="blogs.html" class="link sec"> <i class="fas fa-chevron-right"></i>&numsp; blogs </a>
+                <a href="services.html" class="link sec"> <i class="fas fa-chevron-right"></i>&numsp; services </a>
+                <a href="contact.html" class="link sec"> <i class="fas fa-chevron-right"></i>&numsp; contact </a>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="tel:9787943467" class="link"> <i class="fas fa-phone"></i>&numsp; +91-97879-43467 </a>
+                <a href="mailto:cecsdineshkumarm23@gmail.com" class="link"> <i class="fas fa-envelope"></i>&numsp; cecsdineshkumarm23@gmail.com </a>
+                <a href="#" onclick="popuplocation()" class="link"> <i class="fas fa-map-marker-alt"></i>&numsp; Namakkal, india - 637001 </a>
+            </div>
+
+            <div class="box">
+                <h3>newsletter</h3>
+                <p>Latest upadates responses</p>
+                <form action="">
+                    <input type="email" name="" placeholder="enter your email" id="" class="email">
+                    <input type="submit" value="subscribe" class="btn">
+                </form>
+            </div>
+
+        </div>
+
+        <div class="credit"> created by <span>Dk</span> | all rights reserved! </div>
+
+    </section>
+
+    <!-- footer section ends -->
+
+</body>
+
+<!-- Javascript connection link  -->
+<script src="./script.js"></script>
+
+</html>
